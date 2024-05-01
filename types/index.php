@@ -1,7 +1,7 @@
 <?php
 /*===Intro===*/
 
-/* 
+/*
 Types:
 1) null;
 2) bool;
@@ -9,6 +9,7 @@ Types:
 4) float (floating-point number);
 5) string;
 6) array;
+http://php.manual/types/arrays.php
 7) object;
 8) callable;
 9) resource;
@@ -17,7 +18,7 @@ Types:
 https://www.php.net/manual/ru/types.comparisons.php
 */
 
-/* 
+/*
 Проверка:
 - значения и типа выражения - var_dump()
 - типа выражения - get_debug_type()
@@ -42,37 +43,36 @@ if (is_string($a_bool)) {
   echo "Строка: $a_bool";
 }
 
-/* 
+/*
 Список базовых типов:
 1) Встроенные типы:
-  - null;
-  - Скалярные типы:
-    - bool;
-    - int;
-    - float;
-    - string;
-  - array;
-  - object;
-  - resource;
-  - never;
-  - void;
-  - «Относительные типы классов»: self, parent и static;
+	- null;
+	- Скалярные типы:
+		- bool;
+		- int;
+		- float;
+		- string;
+	- array;
+	- object;
+	- resource;
+	- never;
+	- void;
+	- «Относительные типы классов»: self, parent и static;
 2) Типы значений:
-  - false;
-  - true;
+	- false;
+	- true;
 3) Определяемые пользователем типы (часто называемые класс-типами):
-  - Интерфейсы;
-  - Классы;
-  - Перечисления;
+	- Интерфейсы;
+	- Классы;
+	- Перечисления;
 4) callable
 */
 
 
 /*===1. NULL===*/
 
-?>
-<hr>
-<?php
+echo '<hr>';
+
 $var = null;
 var_dump($var);
 var_dump(is_null($var));
@@ -80,9 +80,8 @@ var_dump(is_null($var));
 
 /*===2. Boolean values===*/
 
-?>
-<hr>
-<?php
+echo '<hr>';
+
 // $foo = True;
 
 // if ($action == "show_version") {
@@ -103,7 +102,7 @@ var_dump(is_null($var));
 - пустая строка "" и строка "0";
 - массив без элементов;
 - особый тип NULL (включая неустановленные; переменные)
-- внутренние объекты, которые перегружают своё -; поведение приведения к логическому типу. Наприме;р: объекты SimpleXML, созданные из пустых элементов без атрибутов.
+- внутренние объекты, которые перегружают своё -; поведение приведения к логическому типу. Например: объекты SimpleXML, созданные из пустых элементов без атрибутов.
 Все остальные значения считаются true (включая resource и NAN).
 */
 
@@ -120,9 +119,7 @@ var_dump((bool)"false");  // bool(true)
 
 /*===3. Whole numbers===*/
 
-?>
-<hr>
-<?php
+echo '<hr>';
 
 $a = 1234; // десятичное число
 $a = 0123; // восьмеричное число (эквивалентно 83 в десятичной системе)
@@ -139,11 +136,11 @@ $large_number = 9223372036854775808;
 var_dump($large_number);      // float(9.2233720368548E+18)
 
 $million = 1000000;
-$large_number =  50000000000000 * $million;
+$large_number = 50000000000000 * $million;
 var_dump($large_number);      // float(5.0E+19)
 
 var_dump(25 / 7);         // float(3.5714285714286)
-var_dump((int) (25 / 7)); // int(3)
+var_dump((int)(25 / 7)); // int(3)
 var_dump(round(25 / 7));  // float(4)
 
 // Преобразование в целое 
@@ -152,19 +149,18 @@ function foo($value): int
 {
   return $value;
 }
+
 var_dump(foo(8.1));       // int 8
 var_dump((int)8.1);       // int 8
 var_dump(intval(8.1));    // int 8
 
 // Нельзя приводить неизвестную дробь к типу int, так как это иногда может дать неожиданные результаты.
-echo (int) ((0.1 + 0.7) * 10);    // 7
+echo (int)((0.1 + 0.7) * 10);    // 7
 
 
 /*===4. Floating point numbers===*/
 
-?>
-<hr>
-<?php
+echo '<hr>';
 
 $a = 1.234;
 $b = 1.2e3;
@@ -182,9 +178,7 @@ if (abs($a - $b) < $epsilon) {
 
 /*===5. Strings===*/
 
-?>
-<hr>
-<?php
+echo '<hr>';
 
 // 5.1 Одинарные кавычки
 
@@ -278,6 +272,7 @@ END, 'd e f'];
 var_dump($values);
 
 echo '<br>';
+
 class foo2
 {
   public $bar2 = <<<EOT
@@ -294,6 +289,7 @@ EOD;
 echo $str;
 
 echo '<br>';
+
 class foo
 {
   var $foo;
@@ -358,7 +354,9 @@ EOD;
 
 echo '<br>';
 
-// Синтаксический анализ переменных 
+// 5.n Синтаксический анализ переменных
+
+// простой синтаксис
 echo '<hr>';
 $juice = "apple";
 
@@ -394,3 +392,86 @@ echo '<br>';
 echo "$people->john's wife greeted $people->robert." . PHP_EOL;
 echo '<br>';
 echo "$people->robert greeted the two $people->smiths.";
+
+echo '<br><br>';
+$string = 'string';
+echo "Символ с индексом -2 равен $string[-2].", PHP_EOL;
+$string[-3] = 'o';
+echo "Изменение символа на позиции -3 на «o» даёт следующую строку: $string.", PHP_EOL;
+
+// сложный синтаксис
+echo '<br><br>';
+error_reporting(E_ALL);
+
+//$great = 'здорово';
+//echo "Это { $great}";
+//echo '<br>';
+//echo "Это {$great}";
+//echo '<br>';
+//echo "Этот квадрат шириной {$square->width}00 сантиметров.";
+//echo '<br>';
+//echo "Это работает: {$arr['key']}";
+//echo '<br>';
+//echo "Это работает: {$arr[4][3]}";
+//echo '<br>';
+//echo "Это неправильно: {$arr[foo][3]}";
+//echo '<br>';
+//echo "Это работает: " . $arr['foo'][3];
+//echo '<br>';
+//echo "Это тоже работает: {$obj->values[3]->name}";
+//echo '<br>';
+//echo "Это значение переменной с именем $name: {${$name}}";
+//echo '<br>';
+//echo "Это значение переменной с именем, которое возвращает функция getName(): {${getName()}}";
+//echo '<br>';
+//echo "Это значение переменной с именем, которое возвращает \$object->getName(): {${$object->getName()}}";
+//echo '<br>';
+//echo "Это то, что возвращает функция getName(): {getName()}";
+//echo '<br>';
+//echo "C:\folder\{$great}.txt";
+//echo '<br>';
+//echo "C:\\folder\\{$great}.txt";
+
+class beers
+{
+  const softdrink = 'rootbeer';
+  public static $ale = 'ipa';
+}
+
+$rootbeer = 'A & W';
+$ipa = 'Alexander Keith\'s';
+echo "Я бы хотел {${beers::softdrink}}\n";
+echo '<br><br>';
+echo "Я бы хотел {${beers::$ale}}\n}}";
+
+// 5.n+1 Доступ и изменение символа в строке
+echo '<br><br>';
+$str = 'This is a test.';
+$first = $str[0];
+$third = $str[2];
+echo('first: ' . $first . '; third: ' . $third);
+echo '<br>';
+$str2 = 'This is still a test.';
+$last = $str2[strlen($str2)-1];
+echo $last;
+echo '<br>';
+$str3 = 'Look at the sea';
+$str3[strlen($str3)-1] = 'e';
+echo $str3;
+
+
+/*===Number strings===*/
+
+echo '<hr>';
+var_dump("0D1" == "000"); // false, «0D1» — не научная нотация
+var_dump("0E1" == "000"); // true, «0E1» — это 0 * (10 ^ 1) или 0
+var_dump("2E1" == "020"); // true, «2E1» — это 2 * (10 ^ 1) или 20
+
+$foo = 1 + "10.5";                // $foo — число с плавающей точкой (11.5)
+$foo = 1 + "-1.3e3";              // $foo — число с плавающей точкой (-1299)
+//$foo = 1 + "bob-1.3e3";           // TypeError начиная с PHP 8.0.0. Ранее $foo принималось за целое число (1)
+//$foo = 1 + "bob3";                // TypeError начиная с PHP 8.0.0, Ранее $foo принималось за целое число (1)
+//$foo = 1 + "10 Small Pigs";       // $foo — целое (11). В PHP 8.0.0 выдаётся ошибка уровня E_WARNING, а в более ранних версиях — уровня E_NOTICE
+//$foo = 4 + "10.2 Little Piggies"; // $foo — число с плавающей точкой (14.2). В PHP 8.0.0 выдаётся ошибка уровня E_WARNING, а в более ранних версиях — уровня E_NOTICE
+//$foo = "10.0 pigs " + 1;          // $foo — число с плавающей точкой (11). В PHP 8.0.0 выдаётся ошибка уровня E_WARNING, а в более ранних версиях — уровня E_NOTICE
+//$foo = "10.0 pigs " + 1.0;        // $foo — число с плавающей точкой (11). В PHP 8.0.0 выдаётся ошибка уровня E_WARNING, а в более ранних версиях — уровня E_NOTICE
