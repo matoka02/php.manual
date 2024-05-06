@@ -57,3 +57,47 @@ var_dump($unset_arr);                         // array (size=1): 3 => string 'de
 /*===Variable scope===*/
 echo '<hr>';
 print('<a href="http://php.manual/variables/scope.php">http://php.manual/variables/scope.php</a>');
+
+
+/*===Variable variables===*/
+echo '<hr>';
+
+$a = 'hello';
+$$a = 'world';
+echo "$a {$$a}";
+echo '<br>';
+echo "$a $hello";
+
+echo '<br>';
+
+class Foo
+{
+  public $bar = 'Я bar.';
+  public $arr = array('Я A.', 'Я B.', 'Я C.');
+  public $r = 'Я r.';
+}
+
+$foo3 = new Foo();
+$bar3 = 'bar';
+$baz = array('foo', 'bar', 'baz', 'quux');
+echo $foo3->$bar3 . "\n";
+echo '<br>';
+echo $foo3->{$baz[1]} . "\n";
+
+$start = 'b';
+$end = 'ar';
+echo '<br>';
+echo $foo3->{$start . $end} . "\n";
+
+$arr = 'arr';
+echo '<br>';
+echo $foo3->{$arr[1]} . "\n";
+
+
+/*===Variables From External Sources ===*/
+echo '<hr>';
+print('<a href="http://php.manual/variables/external.php">http://php.manual/variables/external.php</a>');
+
+/*
+PHP содержит несколько функций, которые умеют определять тип переменной, например: gettype(), is_array(), is_float(), is_int(), is_object() и is_string().
+*/
