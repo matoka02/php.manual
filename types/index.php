@@ -666,3 +666,9 @@ function gen(): iterable
 }
 
 var_dump(gen());
+
+
+/*===Type declarations===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/types/declarations.php">http://php.manual/types/declarations.php</a>');
