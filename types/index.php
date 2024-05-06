@@ -9,7 +9,6 @@ Types:
 4) float (floating-point number);
 5) string;
 6) array;
-http://php.manual/types/arrays.php
 7) object;
 8) callable;
 9) resource;
@@ -476,6 +475,11 @@ $foo = 1 + "-1.3e3";              // $foo — число с плавающей �
 //$foo = "10.0 pigs " + 1;          // $foo — число с плавающей точкой (11). В PHP 8.0.0 выдаётся ошибка уровня E_WARNING, а в более ранних версиях — уровня E_NOTICE
 //$foo = "10.0 pigs " + 1.0;        // $foo — число с плавающей точкой (11). В PHP 8.0.0 выдаётся ошибка уровня E_WARNING, а в более ранних версиях — уровня E_NOTICE
 
+
+/*===6. Arrays===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/types/arrays.php">http://php.manual/types/arrays.php</a>');
 
 /*===7. Objects===*/
 

@@ -1,5 +1,8 @@
 <?php
 
+print('<a href="http://php.manual/types/index.php">Back</a>');
+echo '<br><br>';
+
 $array = array(
   "foo" => "bar",
   "bar" => "foo",
