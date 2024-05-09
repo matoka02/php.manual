@@ -144,9 +144,94 @@ $a .= $b	$a = $a . $b	Конкатенация строк
 $a ??= $b	$a = $a ?? $b	Объединение с Null
 **/
 
+
 /*===Bitwise Operators===*/
 
 echo '<hr>';
 print('<a href="http://php.manual/operators/bitwise.php">http://php.manual/operators/bitwise.php</a>');
 
+
+/*===Comparison Operators===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/operators/comparison.php">http://php.manual/operators/comparison.php</a>');
+
+
+/*===Error Control Operators===*/
+
+echo '<hr>';
+//$my_file = @file ('non_existent_file') or die ("Ошибка при открытии файла: сообщение об ошибке было таким: '" . error_get_last()['message'] . "'");
+
+echo '<br>';
+//$value = @$cache[$key];
+
+
+/*===Execution Operators===*/
+
+echo '<hr>';
+$output = `ls -al`;
+echo "<pre>$output</pre>";
+echo '<pre>' . shell_exec('ls -al') . '</pre>';
+
+
+/*===Execution Operators===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/operators/logical.php">http://php.manual/operators/logical.php</a>');
+
+
+/*===String Operators===*/
+
+echo '<hr>';
+$a = "Привет, ";
+$b = $a . "Мир!";
+print_r($b);
+echo '<br>';
+$a = "Привет, ";
+$a .= "Мир!";
+print_r($a);
+
+
+/*===Array Operators===*/
+
+echo '<hr>';
+
+/**
+Операторы, работающие с массивами
+Пример   	  Название	            Результат
+$a + $b	    Объединение	          Объединение массива $a с массивом $b.
+$a == $b	  Равно	                Возвращает true, если массив в переменной $a и массив в переменной $b содержат одни и те же пары ключ/значение.
+$a === $b	  Тождественно равно	  Возвращает true, если массив в переменной $a и массив в переменной $b содержат одни и те же пары ключ/значение в том же самом порядке и того же типа.
+$a != $b	  Не равно	            Возвращает true, если массив в переменной $a не равен массиву в переменной $b.
+$a <> $b	  Не равно	            Возвращает true, если массив в переменной $a не равен массиву в переменной $b.
+$a !== $b	  Тождественно не равно	Возвращает true, если массив в переменной $a не равен тождественно массиву в переменной $b.
+**/
+
+$a = array("a" => "яблоко", "b" => "банан");
+$b = array("a" => "груша", "b" => "клубника", "c" => "вишня");
+
+$c = $a + $b; // Объединение $a и $b
+echo "Объединение \$a и \$b: \n";
+var_dump($c);
+
+$c2 = $b + $a; // Объединение $b и $a
+echo "Объединение \$b и \$a: \n";
+var_dump($c2);
+
+$a += $b; // Объединение $a += $b — это $a и $b
+echo "Объединение \$a += \$b: \n";
+var_dump($a);
+
+echo '<br>';
+$a = array("apple", "banana");
+$b = array(1 => "banana", "0" => "apple");
+
+var_dump($a == $b); // bool(true)
+var_dump($a === $b); // bool(false)
+
+
+/*===Type Operators===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/operators/types.php">http://php.manual/operators/types.php</a>');
 
