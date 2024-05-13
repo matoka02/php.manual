@@ -40,3 +40,38 @@ function recursion($a)
 echo '<hr>';
 print('<a href="http://php.manual/functions/function_arguments.php">http://php.manual/functions/function_arguments.php</a>');
 
+
+/*===Returning values===*/
+
+echo '<hr>';
+function square($num)
+{
+  return $num * $num;
+}
+
+echo square(4);
+
+//  Возврат нескольких значений в виде массива
+echo '<br>';
+function small_numbers()
+{
+  return [0, 1, 2];
+}
+[$zero, $one, $two] = small_numbers();
+list($zero, $one, $two) = small_numbers();
+var_dump(small_numbers());
+
+//  Возврат результата по ссылке
+function &return_reference()
+{
+  return $someref;
+}
+
+$newref =& return_reference();
+
+
+/*===Variable functions===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/functions/variable_functions.php">http://php.manual/functions/variable_functions.php</a>');
+
