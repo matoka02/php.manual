@@ -170,3 +170,59 @@ $a = [1, 2];
 echo add(...$a);
 
 // Аргументы с подсказкой типа
+echo '<br>';
+function total_intervals($unit, DateInterval ...$intervals)
+{
+  $time = 0;
+  foreach ($intervals as $interval) {
+    $time += $interval->$unit;
+  }
+  return $time;
+}
+$a = new DateInterval("P1D");
+$b = new DateInterval("P2D");
+echo total_intervals('d', $a, $b) . 'days';
+//echo total_intervals('d',null);
+
+// Fatal error: Uncaught TypeError: total_intervals(): Argument #2 must be of type DateInterval,
+// null given, called on line 184 and defined on line 174
+
+/**
+ * Синтаксис именованного аргумента
+ * echo '<br>';
+ * myFunction(paramName: $value);
+ * array_foobar(array: $value);
+ * НЕ поддерживается
+ * function_name($variableStoringParamName: $value);
+ *
+ * Позиционные аргументы по сравнению с именованными аргументами
+ * Передача позиционных аргументов:
+ * array_fill(0, 100, 50);
+ * Передача именованных аргументов:
+ * array_fill(start_index: 0, count: 100, value: 50);
+ *
+ * Тот же пример, но с другим порядком аргументов
+ * array_fill(value: 50, count: 100, start_index: 0);
+ *
+ * Объединение именованных аргументов с позиционными аргументами
+ * htmlspecialchars($string, double_encode: false);
+ * То же самое
+ * htmlspecialchars($string, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, 'UTF-8', false);
+ *
+ * Ошибка, которая возникает при передаче одного и того же параметра больше одного раза
+ * function foo($param) {}
+ * foo5(param: 1, param: 2);
+ * Error: Named parameter $param overwrites previous argument
+ * foo6(1, param: 2);
+ * Error: Named parameter $param overwrites previous argument
+ **/
+
+//  Пример передачи именованных аргументов после распаковки
+echo '<br>';
+function foo7($a, $b, $c = 3, $d = 4) {
+  return $a + $b + $c + $d;
+}
+
+var_dump(foo7(...[1, 2], d: 40));                   // 46
+var_dump(foo7(...['b' => 2, 'a' => 1], d: 40));     // 46
+var_dump(foo7(...[1, 2], b: 20));                   // Fatal error: Named parameter $b overwrites previous argument
