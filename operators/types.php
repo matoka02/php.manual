@@ -1,5 +1,6 @@
 <?php
 
+namespace operators\types;
 print('<a href="http://php.manual/operators/index.php">Back</a>');
 echo '<br><br>';
 

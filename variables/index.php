@@ -1,5 +1,6 @@
 <?php
 
+namespace variables\index;
 /*===Basics===*/
 
 $var = 'Боб';

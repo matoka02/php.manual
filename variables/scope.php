@@ -1,5 +1,6 @@
 <?php
 
+namespace variables\scope;
 print('<a href="http://php.manual/variables/index.php">Back</a>');
 echo '<br><br>';
 
