@@ -1,5 +1,6 @@
 <?php
 
+namespace classes_and_objects\basics;
 print('<a href="http://php.manual/classes_and_objects/index.php">Back</a>');
 echo '<br><br>';
 
