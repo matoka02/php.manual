@@ -48,4 +48,4 @@ class Foo2{
   private const BAZ = 'baz';
 }
 echo Foo2::BAR, PHP_EOL;
-echo Foo2::BAZ, PHP_EOL;
+//echo Foo2::BAZ, PHP_EOL;
