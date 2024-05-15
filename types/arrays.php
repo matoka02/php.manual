@@ -1,5 +1,6 @@
 <?php
 
+namespace types\arrays;
 print('<a href="http://php.manual/types/index.php">Back</a>');
 echo '<br><br>';
 

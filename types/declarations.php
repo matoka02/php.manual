@@ -1,6 +1,7 @@
 <?php
 
 //declare(strict_types=1);
+namespace types\declarations;
 
 print('<a href="http://php.manual/types/index.php">Back</a>');
 echo '<br><br>';
