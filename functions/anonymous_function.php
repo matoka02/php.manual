@@ -1,5 +1,6 @@
 <?php
 
+namespace operators\anonymous_function;
 print('<a href="http://php.manual/functions/index.php">Back</a>');
 echo '<br><br>';
 
