@@ -18,3 +18,8 @@ print('<a href="http://php.manual/classes_and_objects/constants.php">http://php.
 
 echo '<hr>';
 print('<a href="http://php.manual/classes_and_objects/autoloading.php">http://php.manual/classes_and_objects/autoloading.php</a>');
+
+/*===Constructors and Destructors ===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/classes_and_objects/constructor.php">http://php.manual/classes_and_objects/constructor.php</a>');
