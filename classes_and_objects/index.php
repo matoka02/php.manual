@@ -63,3 +63,8 @@ print('<a href="http://php.manual/classes_and_objects/trait.php">http://php.manu
 
 echo '<hr>';
 print('<a href="http://php.manual/classes_and_objects/anonymous.php">http://php.manual/classes_and_objects/anonymous.php</a>');
+
+/*===Overloading===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/classes_and_objects/overloading.php">http://php.manual/classes_and_objects/overloading.php</a>');
