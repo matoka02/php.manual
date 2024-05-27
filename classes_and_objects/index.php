@@ -53,3 +53,13 @@ print('<a href="http://php.manual/classes_and_objects/abstraction.php">http://ph
 
 echo '<hr>';
 print('<a href="http://php.manual/classes_and_objects/interface.php">http://php.manual/classes_and_objects/interface.php</a>');
+
+/*===Object Interfaces===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/classes_and_objects/trait.php">http://php.manual/classes_and_objects/trait.php</a>');
+
+/*===Anonymous classes===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/classes_and_objects/anonymous.php">http://php.manual/classes_and_objects/anonymous.php</a>');
