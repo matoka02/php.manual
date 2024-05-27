@@ -68,3 +68,13 @@ print('<a href="http://php.manual/classes_and_objects/anonymous.php">http://php.
 
 echo '<hr>';
 print('<a href="http://php.manual/classes_and_objects/overloading.php">http://php.manual/classes_and_objects/overloading.php</a>');
+
+/*===Magic Methods===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/classes_and_objects/methods.php">http://php.manual/classes_and_objects/methods.php</a>');
+
+/*===Final Keyword===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/classes_and_objects/final.php">http://php.manual/classes_and_objects/final.php</a>');
