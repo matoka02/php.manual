@@ -43,3 +43,13 @@ print('<a href="http://php.manual/classes_and_objects/scope_operator.php">http:/
 
 echo '<hr>';
 print('<a href="http://php.manual/classes_and_objects/static.php">http://php.manual/classes_and_objects/static.php</a>');
+
+/*===Class Abstraction===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/classes_and_objects/abstraction.php">http://php.manual/classes_and_objects/abstraction.php</a>');
+
+/*===Object Interfaces===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/classes_and_objects/interface.php">http://php.manual/classes_and_objects/interface.php</a>');
