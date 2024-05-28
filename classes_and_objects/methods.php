@@ -253,3 +253,63 @@ class C
 }
 
 var_dump(new C(42));        // int 1764
+
+
+/*===__clone()===*/
+
+/*
+ * При клонировании объекта, PHP выполняет поверхностную копию всех свойств объекта. Любые
+ * свойства, являющиеся ссылками на другие переменные, останутся ссылками.
+ * После завершения клонирования, если метод __clone() определён, то будет вызван метод __clone()
+ * вновь созданного объекта для возможного изменения всех необходимых свойств.
+ */
+
+echo '<hr>';
+
+class SubObject
+{
+  static $instances = 0;
+  public $instance;
+
+  public function __construct()
+  {
+    $this->instance = ++self::$instances;
+  }
+
+  public function __clone(): void
+  {
+    // TODO: Implement __clone() method.
+    $this->instance = ++self::$instances;
+  }
+}
+
+class MyCloneable
+{
+  public $object1;
+  public $object2;
+
+  function __clone()
+  {
+    // Принудительно клонируем this->object1, иначе
+    // он будет указывать на один и тот же объект.
+    $this->object1 = clone $this->object2;
+  }
+}
+
+$obj = new MyCloneable();
+
+$obj->object1 = new SubObject();
+$obj->object2 = new SubObject();
+
+$obj2 = clone $obj;
+
+print "Оригинальный объект: " . '<br>';
+print_r($obj);
+
+print "Клонированный объект:" . '<br>';
+print_r($obj2);
+
+echo '<br><br>';
+
+$dateTime = new \DateTime();
+echo (clone $dateTime)->format('Y');
