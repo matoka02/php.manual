@@ -78,3 +78,18 @@ print('<a href="http://php.manual/classes_and_objects/methods.php">http://php.ma
 
 echo '<hr>';
 print('<a href="http://php.manual/classes_and_objects/final.php">http://php.manual/classes_and_objects/final.php</a>');
+
+/*===Comparing Objects===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/classes_and_objects/comparing.php">http://php.manual/classes_and_objects/comparing.php</a>');
+
+/*===Late Static Bindings===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/classes_and_objects/binding.php">http://php.manual/classes_and_objects/binding.php</a>');
+
+/*===Objects and references===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/classes_and_objects/references.php">http://php.manual/classes_and_objects/references.php</a>');
