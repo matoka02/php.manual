@@ -93,3 +93,9 @@ print('<a href="http://php.manual/classes_and_objects/binding.php">http://php.ma
 
 echo '<hr>';
 print('<a href="http://php.manual/classes_and_objects/references.php">http://php.manual/classes_and_objects/references.php</a>');
+
+/*===Covariance and Contravariance===*/
+
+echo '<hr>';
+print('<a href="http://php.manual/classes_and_objects/covariance.php">http://php.manual/classes_and_objects/covariance.php</a>');
+
