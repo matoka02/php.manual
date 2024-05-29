@@ -1,8 +1,9 @@
 <?php
 
 namespace classes_and_objects\autoloading;
-use classes_and_objects\MyClass1;
-use classes_and_objects\MyClass2;
+
+use classes_and_objects\test\MyClass1\MyClass1;
+use classes_and_objects\test\MyClass2\MyClass2;
 
 print('<a href="http://php.manual/classes_and_objects/index.php">Back</a>');
 echo '<br><br>';

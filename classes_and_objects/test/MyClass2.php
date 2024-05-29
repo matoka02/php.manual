@@ -1,6 +1,6 @@
 <?php
 
-namespace classes_and_objects\MyClass2;
+namespace classes_and_objects\test\MyClass2;
 
 class MyClass2
 {
