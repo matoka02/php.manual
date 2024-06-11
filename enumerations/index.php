@@ -315,3 +315,65 @@ print_r(Foo2::Bar);
 echo '<br>';
 print_r(Baz2::Beep);
 
+
+/*===Почему перечисления не расширяемы===*/
+echo '<hr>';
+
+class A{}
+class B extends A{}
+
+function foo(A $a){}
+function bar(B $b){
+  foo($b);
+}
+
+echo '<br>';
+
+enum ErrorCode
+{
+  case SOMETHING_BROKE;
+}
+
+function quux(ErrorCode $errorCode)
+{
+  // Кажется, что этот код охватывает все варианты
+  match ($errorCode) {
+    ErrorCode::SOMETHING_BROKE => true,
+  };
+}
+var_dump(ErrorCode::SOMETHING_BROKE);
+
+
+/*===Примеры===*/
+echo '<hr>';
+
+//Базовые ограниченные значения
+enum SortOrder{
+  case Asc;
+  case Desc;
+}
+
+function query($fields, $filter, SortOrder $sort = SortOrder::Asc){}
+
+//Расширенные эксклюзивные значения
+enum UserStatus: string
+{
+  case Pending = 'P';
+  case Active = 'A';
+  case Suspended = 'S';
+  case CanceledByUser = 'C';
+
+  public function label(): string
+  {
+    return match ($this) {
+      static::Pending => 'В ожидании',
+      static::Active => 'Активный',
+      static::Suspended => 'Приостановленный',
+      static::CanceledByUser => 'Отменено пользователем',
+    };
+  }
+}
+
+foreach (UserStatus::cases() as $case) {
+  printf('<option value="%s">%s</option><br>', $case->value, $case->label());
+}
